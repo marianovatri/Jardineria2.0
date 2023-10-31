@@ -1,7 +1,7 @@
 <template>
     <div v-if="showModal" class="service-modal" @click="closeModal">
       <div class="modal-content">
-          <img :src="selectedService.image" alt="Imagen del servicio" />
+          <img :src="imageSrc(selectedService.image)" alt="Imagen del servicio" />
           <span class="close-modal" @click="closeModal">×</span>
       </div>
     </div>
@@ -14,6 +14,12 @@
       selectedService: Object,
     },
     methods: {
+
+      imageSrc(image) {
+        return new URL(`../assets/${image}`, import.meta.url).href;
+      },
+
+
       closeModal() {
         this.$emit('close');
       },
