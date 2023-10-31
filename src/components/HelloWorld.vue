@@ -65,7 +65,7 @@
                 <v-container>
                   <h2 class="mb-4"></h2>
                   <p class="biografia text-h6 text-md-h6 text-lg-h5">
-                    Somos una empresa apasionada por la naturaleza y comprometida con el mantenimiento de los espacios verdes. En Jardineria2.0, nos enorgullece brindar una excelente atención en el cuidado de sus jardines. Planificando expandir nuestros horizontes en el emocionante mundo de la jardinería.
+                    Somos una empresa apasionada por la naturaleza y comprometida con el mantenimiento de los espacios verdes. En Jardineria2.0, nos enorgullece brindar una excelente atención en el cuidado de sus jardines, planificando expandir nuestros horizontes, en el emocionante mundo de la jardinería.
                   </p>
                   <br>
                   <p class="biografia text-h6 text-md-h6 text-lg-h5">
@@ -194,6 +194,14 @@
           </a>
         </div>
 
+        <div :class="moreUp">
+          <a target="_blank" class="instagram-link" :href="instagramLink">
+            <div class="instagram-circle">
+              <v-icon color="white">mdi-instagram</v-icon>
+            </div>
+          </a>
+        </div>
+
         <service-modal :show-modal="isModalOpen" :selected-service="selectedService" @close="closeModal" />
 
       </v-container>
@@ -230,6 +238,8 @@ export default {
         { id: 3, text: "Contacto" },
       ],
 
+      instagramLink: 'https://www.instagram.com/jardineria2.0/',
+
       services: [
         {
           id: 4,
@@ -253,7 +263,7 @@ export default {
           id: 3,
           image: "src/images/PODA.jpeg",
           alt: 'PODA DE ÁRBOLES Y PALMERAS',
-          description: "La poda de árboles y palmeras es esencial para mantener la salud y estética de tus plantas. Nuestros expertos en jardinería se encargarán de la poda de manera profesional, asegurando que tus plantas crezcan de manera saludable y hermosa."
+          description: "La poda de árboles y palmeras es esencial para mantener la salud y estética de tus plantas. Nuestros expertos en jardinería se encargarán de manera profesional, asegurando que tus plantas crezcan en forma saludable."
         },
         {
           id: 1,
@@ -275,6 +285,7 @@ export default {
   mounted() {
 
     let lastScroll = 0;
+
 
     const nav = document.getElementById('nav');
 
@@ -310,7 +321,9 @@ export default {
       }
       
     });
-    
+
+    window.addEventListener('scroll', this.handleScroll);
+
   },
 
   methods: {
@@ -377,6 +390,13 @@ export default {
         'whatsapp-circle-container-bottom': !this.showScrollToTop,
       };
     },
+
+    moreUp() {
+      return {
+        'instagram-circle-container': this.showScrollToTop,
+        'instagram-circle-container-bottom ': !this.showScrollToTop,
+      };
+    },
   }
 };
 </script>
@@ -385,6 +405,40 @@ export default {
 
 * {
   color: white;
+}
+
+.instagram-circle-container {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  z-index: 1001; /* Asegura que esté por encima del modal */
+}
+ 
+.instagram-circle-container-bottom {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1001; /* Asegura que esté por encima del modal */
+}
+
+.instagram-circle {
+  background-color: #C13584; /* Color de Instagram */
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid #adadad;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  border: 1px solid;
+  font-size: 24px;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Agrega una transición de color */
+}
+
+.instagram-circle:hover {
+  background-color: #E4405F; /* Cambia el color al pasar el mouse sobre el círculo */
 }
 
 .color-white {
@@ -533,6 +587,7 @@ ul {
   position: fixed;
   bottom: 20px;
   right: 20px;
+  border: 1px solid #adadad;
   z-index: 1002; /* Asegura que esté por encima del modal y la flecha de WhatsApp */
   background-color: rgb(37 145 156);
   width: 50px;
@@ -550,30 +605,44 @@ ul {
 .scroll-to-top:hover {
   background-color: rgb(42, 200, 217);}
 
-.whatsapp-circle-container {
+.instagram-circle-container{
   position: fixed;
   bottom: 80px;
   right: 20px;
   z-index: 1001; /* Asegura que esté por encima del modal */
 }
 
-.whatsapp-circle-container-bottom {
+.whatsapp-circle-container {
+  position: fixed;
+  bottom: 135px;
+  right: 20px;
+  z-index: 1001; /* Asegura que esté por encima del modal */
+}
+
+.instagram-circle-container-bottom {
   position: fixed;
   bottom: 20px;
   right: 20px;
   z-index: 1001; /* Asegura que esté por encima del modal */
 }
 
+.whatsapp-circle-container-bottom {
+  position: fixed;
+  bottom: 75px;
+  right: 20px;
+  z-index: 1001; /* Asegura que esté por encima del modal */
+}
 .whatsapp-circle {
   background-color: green;
   width: 50px;
+  border: 1px solid #adadad;
   height: 50px;
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
   color: white;
-  font-size: 24px;
+  font-size: 2px;
   cursor: pointer;
   transition: background-color 0.3s ease; /* Agrega una transición de color */
 }
