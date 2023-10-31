@@ -243,37 +243,37 @@ export default {
       services: [
         {
           id: 4,
-          image: "assets/CORTECESPED.jpeg",
+          image: "/src/assets/CORTECESPED.jpeg",
           alt: 'CORTE DE CÉSPED',
           description: "El corte de césped es uno de nuestros servicios principales. Utilizamos equipos diseñados para realizar este trabajo de manera uniforme y mantener tu jardín en óptimas condiciones."
         },
         {
           id: 2,
-          image: "assets/N1.jpeg",
+          image: "/src/assets/N1.jpeg",
           alt: 'NIVELADO DE TERRENO',
           description: "Nuestro equipo está especializado en nivelar terrenos de manera precisa y profesional. Realizamos el nivelado necesario para garantizar que tu césped quede perfectamente cortado y uniforme."
         },
         {
           id: 6,
-          image: "assets/LIMPIEZA.jpeg",
+          image: "/src/assets/LIMPIEZA.jpeg",
           alt: 'LIMPIEZA DE JARDINES Y LOTES',
           description: "Ofrecemos servicios de limpieza de jardines y lotes, eliminando hojas, ramas y desechos. Deja que nuestro equipo se encargue de mantener tu espacio exterior limpio y ordenado."
         },
         {
           id: 3,
-          image: "assets/PODA.jpeg",
+          image: "/src/assets/PODA.jpeg",
           alt: 'PODA DE ÁRBOLES Y PALMERAS',
           description: "La poda de árboles y palmeras es esencial para mantener la salud y estética de tus plantas. Nuestros expertos en jardinería se encargarán de manera profesional, asegurando que tus plantas crezcan en forma saludable."
         },
         {
           id: 1,
-          image: "assets/CC2.jpeg",
+          image: "/src/assets/CC2.jpeg",
           alt: 'COLOCACIÓN DE CÉSPED',
           description: "Realizamos colocación de césped de alta calidad para mantener tu jardín impecable y verde durante todo el año."
         },
         {
           id: 5,
-          image: "assets/JARDINSECO.jpeg",
+          image: "/src/assets/JARDINSECO.jpeg",
           alt: 'JARDÍN SECO',
           description: "Nos especializamos en la creación y mantenimiento de jardines secos, ideales para conservar agua y energía. Diseñamos y cuidamos jardines que requieren poco riego, pero que lucen hermosos durante todo el año."
         },
