@@ -540,7 +540,7 @@ a:hover {
   align-items: center;
   padding: 1rem;
   transition: all 0.3s ease;
-  justify-content: space-around;
+  justify-content: space-between;
   position: fixed;
   left: 0;
   right: 0;
