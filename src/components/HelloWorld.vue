@@ -14,7 +14,7 @@
       <div>
         <ul class="d-flex links">
           <li v-for="link in links" :key="link.id" @click="scrollToSection(link.text)">
-            <a class="c-pointer">{{ link.text }}</a>
+            <a class="c-pointer Link">{{ link.text }}</a>
           </li>
         </ul>
       </div>
@@ -410,6 +410,11 @@ export default {
 
 * {
   color: white;
+}
+
+.Link:hover {
+  color: #0d4d0d;
+  transition: all 0.5s;
 }
 
 .instagram-circle-container {
