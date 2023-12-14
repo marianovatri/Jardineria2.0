@@ -162,10 +162,11 @@
                 <div class="d-flex justify-space-around w-100 mb-4">
                   <div class="contactBox">
                     <!-- Instagram -->
-                    <v-btn class="contact-item" color="pink" @click="openLink('https://www.instagram.com/jardineria2.0/')">
+                    <v-btn class="contact-item" color="pink">
                       <v-icon size="40" color="white">mdi-instagram</v-icon>
                     </v-btn>
-                    <span @click="openLink('https://www.instagram.com/jardineria2.0/')" class="cursor-pointer text-md-h6 text-lg-h6">Seguinos en Instagram</span>
+                    <span class="cursor-pointer text-md-h6 text-lg-h6">Instagram: jardineria2.0</span>
+                    <!-- <span @click="openLink('https://www.instagram.com/jardineria2.0/')" class="cursor-pointer text-md-h6 text-lg-h6">Seguinos en Instagram</span> -->
                   </div>
                   <div class="contactBox">
                     <!-- WhatsApp -->
@@ -184,7 +185,7 @@
           <v-icon color="white">mdi-chevron-up</v-icon>
         </div>
 
-        <div :class="scrollToTopContainerClass">
+        <!--  <div :class="scrollToTopContainerClass">
           <a target="_blank" class="whatsapp-link">
             <div class="whatsapp-circle">
               <a :href="whatsappLink">
@@ -192,14 +193,21 @@
               </a>
             </div>
           </a>
-        </div>
+        </div> -->
 
         <div :class="moreUp">
-          <a target="_blank" class="instagram-link" :href="instagramLink">
+          <a target="_blank" class="whatsapp-link">
+            <div class="whatsapp-circle">
+              <a :href="whatsappLink">
+                <v-icon color="white">mdi-whatsapp</v-icon>
+              </a>
+            </div>
+          </a>
+          <!-- <a target="_blank" class="instagram-link" :href="instagramLink">
             <div class="instagram-circle">
               <v-icon color="white">mdi-instagram</v-icon>
             </div>
-          </a>
+          </a> -->
         </div>
 
         <service-modal :show-modal="isModalOpen" :selected-service="selectedService" @close="closeModal" />
