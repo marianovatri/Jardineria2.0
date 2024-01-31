@@ -162,11 +162,13 @@
                 <div class="d-flex justify-space-around w-100 mb-4">
                   <div class="contactBox">
                     <!-- Instagram -->
-                    <v-btn class="contact-item" color="pink">
+                    <v-btn class="contact-item" color="pink" @click="openLink('https://instagram.com/jardineria2.0/')">
                       <v-icon size="40" color="white">mdi-instagram</v-icon>
                     </v-btn>
-                    <span class="cursor-pointer text-md-h6 text-lg-h6">Instagram: jardineria2.0</span>
-                    <!-- <span @click="openLink('https://www.instagram.com/jardineria2.0/')" class="cursor-pointer text-md-h6 text-lg-h6">Seguinos en Instagram</span> -->
+                    <a class="cursor-pointer text-md-h6 text-lg-h6" href="https://instagram.com/jardineria2.0/" target="_blank" aria-label="Seguinos en instagram">
+                      Instagram: jardineria2.0
+                    </a>
+                    <!-- <span @click="openLink('https://instagram.com/jardineria2.0/')" class="cursor-pointer text-md-h6 text-lg-h6">Seguinos en Instagram</span> -->
                   </div>
                   <div class="contactBox">
                     <!-- WhatsApp -->
@@ -203,11 +205,11 @@
               </a>
             </div>
           </a>
-          <!-- <a target="_blank" class="instagram-link" :href="instagramLink">
+          <a target="_blank" class="instagram-link" href="https://instagram.com/jardineria2.0/">
             <div class="instagram-circle">
               <v-icon color="white">mdi-instagram</v-icon>
             </div>
-          </a> -->
+          </a>
         </div>
 
         <service-modal :show-modal="isModalOpen" :selected-service="selectedService" @close="closeModal" />
