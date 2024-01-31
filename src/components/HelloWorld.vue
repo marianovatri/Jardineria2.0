@@ -722,6 +722,7 @@ ul {
 
 .body {
   background: url(../assets/fondo1.jpg);
+  background-size: cover;
 }
 .section-container {
   background-color: #13743f;
