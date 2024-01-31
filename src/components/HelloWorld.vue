@@ -7,13 +7,6 @@
 
     <nav id="nav" class="menu opacity0">
       <v-app-bar-nav-icon @click="showDrawer"></v-app-bar-nav-icon>
-      <v-img
-        src="../assets/Logo.jpg"
-        alt="Logo Jardineria2.0"
-        loading="lazy"
-        max-width="35"
-        class="mx-auto header-image-nav"
-      ></v-img>
       <v-toolbar-title class="white--text">Jardineria 2.0</v-toolbar-title>
       <!-- <div class="logo"> 
         Jardineria 2.0 
@@ -693,14 +686,6 @@ ul {
 
 .wpp-button v-icon {
   margin-right: 8px;
-}
-
-.header-image-nav {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  opacity: 0;
-  animation: logo-appear-animation 2s ease forwards;
 }
 
 .header-image {
