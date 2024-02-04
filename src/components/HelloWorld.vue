@@ -422,6 +422,10 @@ export default {
   color: white;
 }
 
+.headline {
+  background-color: #0f5930db;
+}
+
 .Link:hover {
   color: #0d4d0d;
   transition: all 0.5s;
