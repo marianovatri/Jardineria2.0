@@ -47,7 +47,6 @@
               class="mx-auto header-image"
             ></v-img>
           </v-col>
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/2jLPGTh5GMA?si=oGktrwl7JIJNxHhE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
           <v-col cols="12" class="text-center">
             <h1 class="headline">
