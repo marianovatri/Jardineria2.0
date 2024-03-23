@@ -8,7 +8,7 @@
     <nav id="nav" class="menu">
       <v-app-bar-nav-icon @click="showDrawer"></v-app-bar-nav-icon>
       <div class="navigation-container d-flex ma-2">  
-        <v-img src="../assets/logo.jpg" alt="Logo Jardineria2.0" loading="lazy" class="header-image" />
+        <v-img src="../assets/Logo.jpg" alt="Logo Jardineria2.0" loading="lazy" class="header-image" />
         <div class="text-white text-h5 ml-2">Jardineria 2.0</div>
       </div>
       <ul class="links d-flex">  
