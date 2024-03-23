@@ -5,19 +5,21 @@
       <v-toolbar-title class="white--text">Jardineria 2.0</v-toolbar-title>
     </v-app-bar> -->
 
-    <nav id="nav" class="menu opacity0">
+    <nav id="nav" class="menu">
       <v-app-bar-nav-icon @click="showDrawer"></v-app-bar-nav-icon>
-      <v-toolbar-title class="white--text">Jardineria 2.0</v-toolbar-title>
-      <!-- <div class="logo"> 
-        Jardineria 2.0 
-      </div> -->
-      <div>
-        <ul class="d-flex links">
-          <li v-for="link in links" :key="link.id" @click="scrollToSection(link.text)">
-            <a class="c-pointer Link">{{ link.text }}</a>
-          </li>
-        </ul>
+      <div class="navigation-container d-flex ma-2">  
+        <v-img src="../assets/logo.jpg" alt="Logo Jardineria2.0" loading="lazy" class="header-image" />
+        <div class="text-white text-h5 ml-2">Jardineria 2.0</div>
       </div>
+      <ul class="links d-flex">  
+        <li class="ml-5 cursor-pointer" v-for="link in links" :key="link.id" @click="scrollToSection(link.text)">
+          <a class="link pa-3 rounded-shaped">{{ link.text }}</a> 
+        </li>
+      </ul>
+      <v-btn class="ma-5 bg-green-lighten-5 text-green-darken-4">
+        <v-icon dark>mdi-whatsapp</v-icon>
+        Pedir presupuesto
+      </v-btn>
     </nav>
 
     <v-navigation-drawer class="text-center w-100" app v-model="drawer">
@@ -37,93 +39,139 @@
 
     <v-main>
       <v-container fluid class="body" id="Biografía">
-        <v-row align="center" class="header">
-          <v-col cols="12" class="text-center">
-            <v-img
-              src="../assets/Logo.jpg"
-              alt="Logo Jardineria2.0"
-              loading="lazy"
-              max-width="200"
-              class="mx-auto header-image"
-            ></v-img>
-          </v-col>
+        <v-row class="header align-center">
+          <!-- <v-col cols="12" class="text-center pa-10">
+            <h1 class="headline font-weight-bold text-white">
+              TU JARDÍN, NUESTRO COMPROMISO
+            </h1>
+            <h2 class="subheadline text-white">Jardinería Profesional a tu Alcance</h2>
+          </v-col> -->
 
           <v-col cols="12" class="text-center">
-            <h1 class="headline">
-              Bienvenido a
-              <span class="dynamic-word">
-                Jardineria 2.0
-              </span>
-            </h1>
-            <p class="subheadline">Embelleciendo sus jardines</p>
+            <v-carousel v-model="carouselIndex" 
+            cycle
+            interval="5000"
+            hideDelimiters
+            >
+              <v-carousel-item v-for="(image, index) in imageUrls"
+                height="100%"
+                :src="imageSrc(image)"
+                alt="Imagen del Carrusel"
+                cover
+              >
+                <div class="d-flex flex-column fill-height justify-center align-center">
+                  <div class="text-h3 headline font-weight-bold text-white">
+                    TU JARDÍN, NUESTRO COMPROMISO
+                  </div>
+                  <div class="text-h5 headline text-white">
+                    Jardinería Profesional a tu Alcance
+                  </div>
+                </div>
+            
+              </v-carousel-item>
+            </v-carousel>
+
+            <!-- <v-btn class="ma-5 bg-light-green-darken-4">
+              Obtener un presupuesto
+            </v-btn>
+            <v-btn class="ma-5 text-green-darken-4">
+              Ver servicios
+            </v-btn> -->
           </v-col>
         </v-row>
 
         <v-row>
-          <v-col cols="12" >
-            <v-card class="letter section-container scroll-content fadeTop" >
-              <v-card-text>
-                <v-container>
-                  <h2 class="mb-4"></h2>
-                  <p class="biografia text-h6 text-md-h6 text-lg-h5">
-                    Somos una empresa apasionada por la naturaleza y comprometida con el mantenimiento de los espacios verdes. En Jardineria2.0, nos enorgullece brindar una excelente atención en el cuidado de sus jardines, planificando expandir nuestros horizontes, en el emocionante mundo de la jardinería.
-                  </p>
-                  <br>
-                  <p class="biografia text-h6 text-md-h6 text-lg-h5">
-                    Actualmente, ofrecemos servicios de jardinería de alta calidad, y a su vez, estamos trabajando para incluir insumos y plantas. Buscamos ser la solución integral para todas sus necesidades en este entorno.
-                  </p>
-                  <!-- Rest of the biography content -->
-                </v-container>
-              </v-card-text>
+          <v-col class="letter section-container scroll-content fadeTop d-flex pa-16">
+              <iframe style="border:0;" src="https://lottie.host/embed/13b3d8ec-9604-48fa-ab54-e6dae63af9c5/t36iXCYCyd.json"></iframe>
+              <v-container>
+                <h2 class="biografia text-h4 font-weight-bold mb-5">¿Quiénes <span style="color: green">Somos?</span> </h2>
+                <p class="biografia text-h6 font-weight-regular">
+                  Somos una empresa apasionada por la naturaleza y comprometida con el mantenimiento de los espacios verdes. En <span class="font-weight-bold" style="color: green">Jardineria2.0</span> nos enorgullece brindar una excelente atención en el cuidado de sus jardines. Ofrecemos un servicio personalizado y profesional, utilizando los mejores materiales y técnicas.
+                </p>
+                <br>
+                <p class="biografia text-h6 font-weight-regular">
+                  Actualmente, ofrecemos servicios de jardinería de alta calidad, como el diseño y mantenimiento de jardines, poda de árboles, control de plagas y enfermedades, y mucho más.                </p>
+              </v-container>
+          </v-col>
+        </v-row>
+
+        <v-row>
+          <v-col class="mt-10 d-flex justify-center">
+            <v-card class="pt-5 custom-col rounded-shaped" style="width: min-content;">
+              <iframe style="border: 0; height: 70%;" src="https://lottie.host/embed/d0967822-3f94-4f17-adda-73b4f9d650c9/GqaKVi4S4S.json"></iframe>
+              <h2 style="font-family: 'Roboto', sans-serif; color: green;">Nuestros Servicios</h2>
             </v-card>
           </v-col>
         </v-row>
 
-        <v-row>
-          <v-col cols="12" class="text-center">
-            <h2 id="Servicios" class="mb-4">Servicios</h2>
+        <v-row class="d-flex" id="Servicios">
+          <v-col cols="12" sm="12" md="6" lg="6" v-for="(service, index) in services" :key="service.id">
+            <v-card
+              class=" d-flex flex-column mx-auto scroll-content fadeTop text-center align-center"
+              max-width="500"
+            >
+              <v-img
+                :src="imageSrc(service.image)"
+                loading="lazy"
+                :width="300"
+                alt="Icono de servicio"
+                class="service-image"
+                @click="openModal(service)"
+              ></v-img>
+    
+              <v-card-title>
+                {{service.alt}}
+              </v-card-title>
+    
+              <div class="text-grey-darken-1 mx-4">
+                {{ service.description }}
+              </div>
+                    
+              <v-card-actions>
+                <v-btn
+                  color="green darken-2"
+                  icon
+                  variant="tonal"
+                  :href="'https://wa.me/3564328430?text=Hola%2C%20estoy%20interesado%20en%20obtener%20un%20presupuesto%20para%20el%20servicio%20de%20' + service.alt"
+                  target="_blank"
+                  style="width: 100%;border-radius: 0;font-size: 70%;"
+                >
+                  <v-icon dark>mdi-whatsapp</v-icon>
+                  Pedir Presupuesto
+                </v-btn>
+              </v-card-actions>
+            </v-card>
+          </v-col>
+        </v-row>
+
+
+
+        <!-- <v-row>
+          <v-col cols="12" class="">
+            <h2 id="Servicios" class="mb-4 text-center">Nuestros servicios</h2>
             <v-card class="d-flex flex-column align-center letter">
+
               <v-card-text cols="12" sm="6" md="4" lg="3" v-for="(service, index) in services" :key="service.id" >
                 <v-container class="service-box">
-                  <div v-if="index % 2 == 1" class=" section-container revert scroll-content fadeLeft d-flex align-center">
-                    <div class="px-3 d-flex flex-column align-center justify-space-between">
-                      <p class="text-center text-h5 text-md-h4 text-lg-h4 mb-5 mt-5">{{ service.alt }}</p> 
-                      <p class="text-center text-h6 text-md-h5 text-lg-h5">{{ service.description }}</p>
-                      <v-btn
-                        class="wpp-button w-75 text-overline"
-                        color="green darken-2"
-                        icon
-                        :href="'https://wa.me/3564328430?text=Hola%2C%20estoy%20interesado%20en%20obtener%20un%20presupuesto%20para%20el%20servicio%20de%20' + service.alt"
-                        target="_blank"
-                        style="width: 100%;border-radius: 0;font-size: 70%;"
-                      >
-                        <v-icon dark>mdi-whatsapp</v-icon>
-                        Pedir Presupuesto
-                      </v-btn>
-                    </div>
+                  <div class=" section-container scroll-content fadeTop d-flex">
+
+
                     <v-img
                       :src="imageSrc(service.image)"
                       loading="lazy"
+                      :width="300"
+                      aspect-ratio="1/1"
                       alt="Icono de servicio"
                       class="service-image"
                       @click="openModal(service)"
                     ></v-img>
-                  </div>
-                  <div v-else class=" section-container scroll-content fadeRight d-flex align-center">
-                    <v-img
-                      :src="imageSrc(service.image)"
-                      loading="lazy"
-                      alt="Icono de servicio"
-                      class="service-image"
-                      @click="openModal(service)"
-                    ></v-img>
-                    <div class="px-3 d-flex flex-column align-center justify-space-between"> 
-                      <p class="text-center text-h5 text-md-h4 text-lg-h4 mb-5 mt-5">{{ service.alt }}</p>
-                      <p class="text-center text-h6 text-md-h5 text-lg-h5">{{ service.description }}</p>
+                    <div class="px-3 d-flex flex-column justify-space-between">
+                      <p class="text-h5 text-md-h4 text-lg-h4 mb-5 mt-5">{{ service.alt }}</p> 
+                      <p class="text-grey-darken-1 mx-4 text-h6 text-md-h5 text-lg-h5">{{ service.description }}</p>
                       <v-btn
-                        class="wpp-button w-75 text-overline"
                         color="green darken-2"
                         icon
+                        variant="tonal"
                         :href="'https://wa.me/3564328430?text=Hola%2C%20estoy%20interesado%20en%20obtener%20un%20presupuesto%20para%20el%20servicio%20de%20' + service.alt"
                         target="_blank"
                         style="width: 100%;border-radius: 0;font-size: 70%;"
@@ -137,44 +185,39 @@
               </v-card-text>
             </v-card>
           </v-col>
-        </v-row>
+        </v-row> -->
 
-        <v-row>
+        <!-- <v-row>
           <v-col cols="12">
             <v-container class="section-container">
               <h2 id="Contacto" class="mb-4 text-center">Contacto</h2>
-              <div class="contact-details d-flex align-items-center">
-                <!-- Teléfono -->
+              <div class="contact-details align-items-center">
                 <div class="d-flex justify-space-around w-100 mb-4">
                   <div class="contactBox">
                     <v-btn class="contact-item" color="green">
-                      <v-icon size="40" color="white">mdi-phone</v-icon>
+                      <v-icon size="20" color="white">mdi-phone</v-icon>
                     </v-btn>
                     <span class="cursor-pointer text-md-h6 text-lg-h6">Teléfono: 3564328430</span>
                   </div>
                   <div class="contactBox">
-                    <!-- Facebook -->
                     <v-btn class="contact-item" color="blue" @click="openLink('https://www.facebook.com/profile.php?id=100063937125255')">
-                      <v-icon size="40" color="white">mdi-facebook</v-icon>
+                      <v-icon size="20" color="white">mdi-facebook</v-icon>
                     </v-btn>
                     <span @click="openLink('https://www.facebook.com/profile.php?id=100063937125255')" class="cursor-pointer text-md-h6 text-lg-h6">Seguinos en Facebook</span>
                   </div>
                 </div>
                 <div class="d-flex justify-space-around w-100 mb-4">
                   <div class="contactBox">
-                    <!-- Instagram -->
                     <v-btn class="contact-item" color="pink" @click="openLink('https://instagram.com/jardineria2.0/')">
-                      <v-icon size="40" color="white">mdi-instagram</v-icon>
+                      <v-icon size="20" color="white">mdi-instagram</v-icon>
                     </v-btn>
                     <a class="cursor-pointer text-md-h6 text-lg-h6" href="https://instagram.com/jardineria2.0/" target="_blank" aria-label="Seguinos en instagram">
                       Instagram: jardineria2.0
                     </a>
-                    <!-- <span @click="openLink('https://instagram.com/jardineria2.0/')" class="cursor-pointer text-md-h6 text-lg-h6">Seguinos en Instagram</span> -->
                   </div>
                   <div class="contactBox">
-                    <!-- WhatsApp -->
                     <v-btn class="contact-item" color="green" @click="openWhatsApp()">
-                      <v-icon size="40" color="white">mdi-whatsapp</v-icon>
+                      <v-icon size="20" color="white">mdi-whatsapp</v-icon>
                     </v-btn>
                     <span @click="openWhatsApp()" class="cursor-pointer text-md-h6 text-lg-h6">WhatsApp: 3564328430</span>
                   </div>
@@ -182,6 +225,47 @@
               </div>
             </v-container>
           </v-col>
+        </v-row> -->
+
+        <v-row>
+          <v-container class="section-container d-flex" id="Contacto">
+            <v-col cols="8">
+              <h2 class="text-white">Sobre Jardinería 2.0</h2>
+              <p class="text-white"> Escriba un párrafo corto y descriptivo sobre la historia de Monarch Jardinería. Puede mencionar cuándo se fundó, su enfoque principal, o cualquier otra información que destaque su negocio.
+              </p>
+            </v-col>
+            <v-col cols="4">
+              <h2 class="text-white">Datos de Contacto</h2>
+              <div class="contact-details">
+                <div class="contactBox">
+                  <v-btn class="contact-item" icon color="green">
+                    <v-icon size="20" color="white">mdi-phone</v-icon>
+                  </v-btn>
+                  <span class="cursor-pointer text-md-h6 text-lg-h6 text-white">Teléfono: 3564328430</span>
+                </div>
+                <div class="contactBox">
+                  <v-btn class="contact-item" icon color="blue" @click="openLink('https://www.facebook.com/profile.php?id=100063937125255')">
+                    <v-icon size="20" color="white">mdi-facebook</v-icon>
+                  </v-btn>
+                  <span @click="openLink('https://www.facebook.com/profile.php?id=100063937125255')" class="cursor-pointer text-md-h6 text-lg-h6 text-white">Seguinos en Facebook</span>
+                </div>
+                <div class="contactBox">
+                  <v-btn class="contact-item" icon color="pink" @click="openLink('https://instagram.com/jardineria2.0/')">
+                    <v-icon size="20" color="white">mdi-instagram</v-icon>
+                  </v-btn>
+                  <a class="cursor-pointer text-md-h6 text-lg-h6" href="https://instagram.com/jardineria2.0/" target="_blank" aria-label="Seguinos en instagram">
+                    Instagram: jardineria2.0
+                  </a>
+                </div>
+                <div class="contactBox">
+                  <v-btn class="contact-item" icon color="green" @click="openWhatsApp()">
+                    <v-icon size="20" color="white">mdi-whatsapp</v-icon>
+                  </v-btn>
+                  <span @click="openWhatsApp()" class="cursor-pointer text-white text-md-h6 text-lg-h6">WhatsApp: 3564328430</span>
+                </div>
+              </div>
+            </v-col>
+          </v-container>
         </v-row>
 
         <div class="scroll-to-top" @click="scrollToTop" v-show="showScrollToTop">
@@ -232,6 +316,15 @@ export default {
   },
   data() {
     return {
+
+      imageUrls: [ 
+        "ARMADOC.jpeg",
+        "CC2.jpeg",
+        "CC3.jpeg",
+        "CC3.jpeg",
+        "CC3.jpeg",
+      ],
+      carouselIndex: 0, 
       
       dynamicWords: ['Jardines', 'Flores', 'Paisajismo', 'Naturaleza', 'Verdor'], // Lista de palabras relacionadas
       dynamicWordIndex: 0, // Índice actual de la palabra
@@ -297,22 +390,21 @@ export default {
 
     let lastScroll = 0;
 
+    // const nav = document.getElementById('nav');
 
-    const nav = document.getElementById('nav');
-
-    if (lastScroll == 0) {
-      nav.classList.add('visible');
-    }
+    // if (lastScroll == 0) {
+    //   nav.classList.add('visible');
+    // }
 
     window.addEventListener('scroll', function()  {
 
       const currentScroll = window.scrollY;
 
-      if (currentScroll > lastScroll) {  
-        nav.classList.remove('visible');
-      } else {        
-        nav.classList.add('visible');
-      }
+      // if (currentScroll > lastScroll) {  
+      //   nav.classList.remove('visible');
+      // } else {        
+      //   nav.classList.add('visible');
+      // }
 
       lastScroll = currentScroll;
 
@@ -420,16 +512,35 @@ export default {
 <style scoped>
 
 * {
-  color: white;
+  font-family: "Open Sans", sans-serif;
+}
+
+.navigation-container {
+  display: flex;
+  align-items: center;
+}
+
+#Contacto {
+  background-color: #008036;
+}
+
+#Biografía {
+  padding: 0;
+}
+
+.custom-col {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 .headline {
-  background-color: #0f5930db;
+  font-size: xxx-large;
+  font-weight: 500;
 }
 
-.Link:hover {
-  color: #0d4d0d;
-  transition: all 0.5s;
+.subheadline {
+  font-weight: 400;
 }
 
 .instagram-circle-container {
@@ -478,12 +589,22 @@ export default {
   cursor: pointer;
 }
 
-.service-box {
+/* .service-box {
   width: 75%;
+} */
+
+.link {
+  transition: all 0.5s;
+  background-color: #007230
+}
+
+.link:hover {
+  background-color: #0b4c26;
 }
 
 .links a {
   font-size: larger;
+  font-weight: 500;
   margin-left: 10px;
 }
 
@@ -522,7 +643,7 @@ export default {
 }
 .fadeLeft {
   opacity: 0;
-  transform: translate(-10vh, 0vh);
+  transform: translate(0vh, 10vh);
   transition: all 1.5s;
 }
 
@@ -555,17 +676,12 @@ a:hover {
 }
 
 .menu {
-  background-color: #4caf50;
+  background-color: #008036;
   display: flex;
   align-items: center;
   padding: 1rem;
   transition: all 0.3s ease;
   justify-content: space-between;
-  position: fixed;
-  left: 0;
-  right: 0;
-  top: 0;
-  z-index: 1;
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
 }
 
@@ -576,7 +692,7 @@ ul {
 
 .biografia {
   font-size: 19px;
-  text-align: center;
+  /* text-align: center; */
   font-family: revert;
 }
 
@@ -586,26 +702,20 @@ ul {
 
 .contactBox {
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
   align-items: center;
   text-align: center;
 }
 
 .contact-item {
-  width: 20%;
   margin: 5px;
-  padding: 2rem;
+  padding: 0rem;
   justify-content: center;
   cursor: pointer;
 }
 
 .v-row {
   justify-content: center;
-}
-
-.dynamic-word {
-  color: #09e158;
-  position: relative;
 }
 
 .scroll-to-top {
@@ -696,12 +806,10 @@ ul {
 }
 
 .header-image {
-  margin-top: 5rem;
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  opacity: 0;
+  height: 4rem;
+  width: 4rem;
   animation: logo-appear-animation 2s ease forwards;
+  border-radius: 50%;
 }
 
 @keyframes logo-appear-animation {
@@ -727,25 +835,23 @@ ul {
 }
 
 .body {
-  background: url(../assets/fondo1.jpg);
+  background-color: #f0f0f0;
 }
 .section-container {
-  background-color: #0f5930db;;
-  color: white;
+  background-color: white;
   padding: 20px;
   min-width: 100%;
   border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  margin-bottom: 20px;
+  box-shadow: 0 2px 10px #000000ba;
 }
 
-.section-container:hover {
+/* .section-container:hover {
   transform: scale(1.015);
-}
+} */
 
 
 .contact-details {
-  display: flex;
+  /* display: flex; */
   /* align-items: flex-start; */
   /* margin-top: 20px; */
   justify-content: space-around;
@@ -754,7 +860,6 @@ ul {
 .contact-item {
   display: flex;
   align-items: center;
-  margin-bottom: 10px;
 }
 
 .contact-item a {
@@ -766,10 +871,6 @@ ul {
 
 .contact-item a:hover {
   text-decoration: underline;
-}
-
-.contact-item v-icon {
-  margin-right: 8px;
 }
 
 @media (max-width: 768px) {
