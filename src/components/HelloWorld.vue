@@ -6,20 +6,23 @@
     </v-app-bar> -->
 
     <nav id="nav" class="menu">
-      <v-app-bar-nav-icon @click="showDrawer"></v-app-bar-nav-icon>
+      <v-app-bar-nav-icon @click="showDrawer" color="white"></v-app-bar-nav-icon>
       <div class="navigation-container d-flex ma-2">  
         <v-img src="../assets/Logo.jpg" alt="Logo Jardineria2.0" loading="lazy" class="header-image" />
-        <div class="text-white text-h5 ml-2">Jardineria 2.0</div>
+        <div class="text-white text-h5 ml-2"><span style="display: block;">Jardineria2.0</span></div>
       </div>
       <ul class="links d-flex">  
-        <li class="ml-5 cursor-pointer" v-for="link in links" :key="link.id" @click="scrollToSection(link.text)">
-          <a class="link pa-3 rounded-shaped">{{ link.text }}</a> 
+        <li class="ml-3 cursor-pointer" v-for="link in links" :key="link.id" @click="scrollToSection(link.text)">
+          <a class="link pa-3 rounded-shaped v-resize-text" style="min-font-size: 12px; max-font-size: 18px;">{{ link.text }}</a> 
         </li>
       </ul>
-      <v-btn class="ma-5 bg-green-lighten-5 text-green-darken-4">
+      <v-btn class="ma-5 bg-green-lighten-5 text-green-darken-4 presupuesto">
         <v-icon dark>mdi-whatsapp</v-icon>
         Pedir presupuesto
       </v-btn>
+      <div class="noSpace">
+
+      </div>
     </nav>
 
     <v-navigation-drawer class="text-center w-100" app v-model="drawer">
@@ -605,12 +608,14 @@ export default {
 .links a {
   font-size: larger;
   font-weight: 500;
-  margin-left: 10px;
 }
 
 @media (min-width: 768px) {
   .menu .v-app-bar-nav-icon {
     display: none;
+  }
+  .noSpace {
+    display: none
   }
 }
 
@@ -628,6 +633,12 @@ export default {
 
   .service-box {
     width: 100%;
+  }
+}
+
+@media (max-width: 900px) {
+  .presupuesto {
+    display: none
   }
 }
 
