@@ -9,7 +9,7 @@
       <v-app-bar-nav-icon @click="showDrawer" color="white"></v-app-bar-nav-icon>
       <div class="navigation-container d-flex ma-2">  
         <v-img src="../assets/Logo.jpg" alt="Logo Jardineria2.0" loading="lazy" class="header-image" />
-        <div class="text-white text-h5 ml-2"><span style="display: block;">Jardineria2.0</span></div>
+        <div class="text-white text-h5 ml-2 titleLogo"><span style="display: block;">Jardineria2.0</span></div>
       </div>
       <ul class="links d-flex">  
         <li class="ml-3 cursor-pointer" v-for="link in links" :key="link.id" @click="scrollToSection(link.text)">
@@ -99,7 +99,7 @@
         </v-row>
 
         <v-row>
-          <v-col class="mt-10 d-flex justify-center">
+          <v-col class="mt-10 d-flex justify-center"  id="Contacto">
             <v-card class="pt-5 custom-col rounded-shaped" style="width: min-content;">
               <iframe style="border: 0; height: 70%;" src="https://lottie.host/embed/d0967822-3f94-4f17-adda-73b4f9d650c9/GqaKVi4S4S.json"></iframe>
               <h2 style="font-family: 'Roboto', sans-serif; color: green;">Nuestros Servicios</h2>
@@ -148,127 +148,59 @@
         </v-row>
 
 
+        <v-row class="section-container" id="Contacto">
+          <v-col cols="12" md="4" lg="4" class="d-flex justify-center">
+            <h2 class="text-white">Sobre Jardinería 2.0</h2>
+            <p class="text-white">Escriba un párrafo corto y descriptivo sobre la historia de Monarch Jardinería. Puede mencionar cuándo se fundó, su enfoque principal, o cualquier otra información que destaque su negocio.</p>
+          </v-col>
 
-        <!-- <v-row>
-          <v-col cols="12" class="">
-            <h2 id="Servicios" class="mb-4 text-center">Nuestros servicios</h2>
-            <v-card class="d-flex flex-column align-center letter">
-
-              <v-card-text cols="12" sm="6" md="4" lg="3" v-for="(service, index) in services" :key="service.id" >
-                <v-container class="service-box">
-                  <div class=" section-container scroll-content fadeTop d-flex">
-
-
-                    <v-img
-                      :src="imageSrc(service.image)"
-                      loading="lazy"
-                      :width="300"
-                      aspect-ratio="1/1"
-                      alt="Icono de servicio"
-                      class="service-image"
-                      @click="openModal(service)"
-                    ></v-img>
-                    <div class="px-3 d-flex flex-column justify-space-between">
-                      <p class="text-h5 text-md-h4 text-lg-h4 mb-5 mt-5">{{ service.alt }}</p> 
-                      <p class="text-grey-darken-1 mx-4 text-h6 text-md-h5 text-lg-h5">{{ service.description }}</p>
-                      <v-btn
-                        color="green darken-2"
-                        icon
-                        variant="tonal"
-                        :href="'https://wa.me/3564328430?text=Hola%2C%20estoy%20interesado%20en%20obtener%20un%20presupuesto%20para%20el%20servicio%20de%20' + service.alt"
-                        target="_blank"
-                        style="width: 100%;border-radius: 0;font-size: 70%;"
-                      >
-                        <v-icon dark>mdi-whatsapp</v-icon>
-                        Pedir Presupuesto
-                      </v-btn>
-                    </div>
-                  </div>
-                </v-container>
+          <v-col cols="12" md="4" lg="4">
+            <v-card class="contact-details">
+              <v-card-title class="text-h5">Servicios Principales</v-card-title>
+              <v-card-text class="contactBox">
+                <v-list class="pa-0">
+                  <v-list-item v-for="servicio in services" :key="servicio.alt" class="pa-0 ma-0 d-flex align-center">
+                    <v-list-item-title class="ml-2">
+                      <v-icon size="20" color="green">mdi-check</v-icon>
+                      {{ servicio.alt }}
+                    </v-list-item-title>
+                  </v-list-item>
+                </v-list>
               </v-card-text>
             </v-card>
           </v-col>
-        </v-row> -->
 
-        <!-- <v-row>
-          <v-col cols="12">
-            <v-container class="section-container">
-              <h2 id="Contacto" class="mb-4 text-center">Contacto</h2>
-              <div class="contact-details align-items-center">
-                <div class="d-flex justify-space-around w-100 mb-4">
-                  <div class="contactBox">
-                    <v-btn class="contact-item" color="green">
-                      <v-icon size="20" color="white">mdi-phone</v-icon>
-                    </v-btn>
-                    <span class="cursor-pointer text-md-h6 text-lg-h6">Teléfono: 3564328430</span>
-                  </div>
-                  <div class="contactBox">
-                    <v-btn class="contact-item" color="blue" @click="openLink('https://www.facebook.com/profile.php?id=100063937125255')">
-                      <v-icon size="20" color="white">mdi-facebook</v-icon>
-                    </v-btn>
-                    <span @click="openLink('https://www.facebook.com/profile.php?id=100063937125255')" class="cursor-pointer text-md-h6 text-lg-h6">Seguinos en Facebook</span>
-                  </div>
-                </div>
-                <div class="d-flex justify-space-around w-100 mb-4">
-                  <div class="contactBox">
-                    <v-btn class="contact-item" color="pink" @click="openLink('https://instagram.com/jardineria2.0/')">
-                      <v-icon size="20" color="white">mdi-instagram</v-icon>
-                    </v-btn>
-                    <a class="cursor-pointer text-md-h6 text-lg-h6" href="https://instagram.com/jardineria2.0/" target="_blank" aria-label="Seguinos en instagram">
-                      Instagram: jardineria2.0
-                    </a>
-                  </div>
-                  <div class="contactBox">
-                    <v-btn class="contact-item" color="green" @click="openWhatsApp()">
-                      <v-icon size="20" color="white">mdi-whatsapp</v-icon>
-                    </v-btn>
-                    <span @click="openWhatsApp()" class="cursor-pointer text-md-h6 text-lg-h6">WhatsApp: 3564328430</span>
-                  </div>
-                </div>
-              </div>
-            </v-container>
-          </v-col>
-        </v-row> -->
-
-        <v-row>
-          <v-container class="section-container d-flex" id="Contacto">
-            <v-col cols="8">
-              <h2 class="text-white">Sobre Jardinería 2.0</h2>
-              <p class="text-white"> Escriba un párrafo corto y descriptivo sobre la historia de Monarch Jardinería. Puede mencionar cuándo se fundó, su enfoque principal, o cualquier otra información que destaque su negocio.
-              </p>
-            </v-col>
-            <v-col cols="4">
-              <h2 class="text-white">Datos de Contacto</h2>
-              <div class="contact-details">
-                <div class="contactBox">
-                  <v-btn class="contact-item" icon color="green">
-                    <v-icon size="20" color="white">mdi-phone</v-icon>
-                  </v-btn>
-                  <span class="cursor-pointer text-md-h6 text-lg-h6 text-white">Teléfono: 3564328430</span>
-                </div>
-                <div class="contactBox">
-                  <v-btn class="contact-item" icon color="blue" @click="openLink('https://www.facebook.com/profile.php?id=100063937125255')">
-                    <v-icon size="20" color="white">mdi-facebook</v-icon>
-                  </v-btn>
-                  <span @click="openLink('https://www.facebook.com/profile.php?id=100063937125255')" class="cursor-pointer text-md-h6 text-lg-h6 text-white">Seguinos en Facebook</span>
-                </div>
-                <div class="contactBox">
-                  <v-btn class="contact-item" icon color="pink" @click="openLink('https://instagram.com/jardineria2.0/')">
-                    <v-icon size="20" color="white">mdi-instagram</v-icon>
-                  </v-btn>
-                  <a class="cursor-pointer text-md-h6 text-lg-h6" href="https://instagram.com/jardineria2.0/" target="_blank" aria-label="Seguinos en instagram">
-                    Instagram: jardineria2.0
-                  </a>
-                </div>
-                <div class="contactBox">
-                  <v-btn class="contact-item" icon color="green" @click="openWhatsApp()">
-                    <v-icon size="20" color="white">mdi-whatsapp</v-icon>
-                  </v-btn>
-                  <span @click="openWhatsApp()" class="cursor-pointer text-white text-md-h6 text-lg-h6">WhatsApp: 3564328430</span>
-                </div>
-              </div>
-            </v-col>
-          </v-container>
+          <v-col cols="12" md="4" lg="4">
+            <h2 class="text-white text-center">Datos de Contacto</h2>
+            <div class="contact-details">
+                <div class="contactBox">
+                <v-btn class="contact-item" icon color="green">
+                 <v-icon size="20" color="white">mdi-phone</v-icon>
+                </v-btn>
+                <span class="cursor-pointer text-md-h6 text-lg-h6 text-white">Teléfono: 3564328430</span>
+              </div>
+              <div class="contactBox">
+                <v-btn class="contact-item" icon color="blue" @click="openLink('https://www.facebook.com/profile.php?id=100063937125255')">
+                  <v-icon size="20" color="white">mdi-facebook</v-icon>
+                </v-btn>
+                <span @click="openLink('https://www.facebook.com/profile.php?id=100063937125255')" class="cursor-pointer text-md-h6 text-lg-h6 text-white">Seguinos en Facebook</span>
+              </div>
+              <div class="contactBox">
+                <v-btn class="contact-item" icon color="pink" @click="openLink('https://instagram.com/jardineria2.0/')">
+                  <v-icon size="20" color="white">mdi-instagram</v-icon>
+                </v-btn>
+                <a class="cursor-pointer text-md-h6 text-lg-h6" href="https://instagram.com/jardineria2.0/" target="_blank" aria-label="Seguinos en instagram">
+                  Instagram: jardineria2.0
+                </a>
+              </div>
+              <div class="contactBox">
+                <v-btn class="contact-item" icon color="green" @click="openWhatsApp()">
+                  <v-icon size="20" color="white">mdi-whatsapp</v-icon>
+                 </v-btn>
+                <span @click="openWhatsApp()" class="cursor-pointer text-white text-md-h6 text-lg-h6">WhatsApp: 3564328430</span>
+              </div>
+            </div>
+          </v-col>
         </v-row>
 
         <div class="scroll-to-top" @click="scrollToTop" v-show="showScrollToTop">
@@ -623,6 +555,10 @@ export default {
   .links {
     display: none !important;
   }
+
+  .titleLogo {
+    display: none !important;
+  }
   .service-image {
     width: 80% !important;
   }
@@ -713,6 +649,7 @@ ul {
 
 .contactBox {
   display: flex;
+  justify-content: center;
   /* flex-direction: column; */
   align-items: center;
   text-align: center;
