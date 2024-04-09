@@ -25,17 +25,17 @@
       </div>
     </nav>
 
-    <v-navigation-drawer class="text-center w-100" app v-model="drawer">
+    <v-navigation-drawer class="" app v-model="drawer">
       <v-list >
         <v-list-item  v-for="link in links" :key="link.id" link @click="scrollToSection(link.text)">
           <v-list-item-content>
-            <v-list-item-title class="text-h4 mt-5 pa-5">{{ link.text }}</v-list-item-title>
+            <v-list-item-title class="text-h5 mt-5 pa-5">{{ link.text }}</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
       </v-list>
       <v-list-item link @click="closeDrawer" class="close-item">
         <v-list-item-content>
-          <v-list-item-title class=" color-white text-h4 pa-5">Cerrar</v-list-item-title>
+          <v-list-item-title class=" color-white text-h5 pa-5">Cerrar</v-list-item-title>
         </v-list-item-content>
       </v-list-item>
     </v-navigation-drawer>
@@ -99,7 +99,7 @@
         </v-row>
 
         <v-row>
-          <v-col class="mt-10 d-flex justify-center"  id="Contacto">
+          <v-col class="mt-10 d-flex justify-center"  id="Servicios">
             <v-card class="pt-5 custom-col rounded-shaped" style="width: min-content;">
               <iframe style="border: 0; height: 70%;" src="https://lottie.host/embed/d0967822-3f94-4f17-adda-73b4f9d650c9/GqaKVi4S4S.json"></iframe>
               <h2 style="font-family: 'Roboto', sans-serif; color: green;">Nuestros Servicios</h2>
@@ -107,7 +107,7 @@
           </v-col>
         </v-row>
 
-        <v-row class="d-flex" id="Servicios">
+        <v-row class="d-flex">
           <v-col cols="12" sm="12" md="6" lg="6" v-for="(service, index) in services" :key="service.id">
             <v-card
               class=" d-flex flex-column mx-auto scroll-content fadeTop text-center align-center"
@@ -149,7 +149,7 @@
 
 
         <v-row class="section-container" id="Contacto">
-          <v-col cols="12" md="4" lg="4" class="d-flex justify-center">
+          <v-col cols="12" md="4" lg="4" class="d-flex flex-column">
             <h2 class="text-white">Sobre Jardinería 2.0</h2>
             <p class="text-white">Escriba un párrafo corto y descriptivo sobre la historia de Monarch Jardinería. Puede mencionar cuándo se fundó, su enfoque principal, o cualquier otra información que destaque su negocio.</p>
           </v-col>
@@ -171,38 +171,37 @@
           </v-col>
 
           <v-col cols="12" md="4" lg="4">
-            <h2 class="text-white text-center">Datos de Contacto</h2>
-            <div class="contact-details">
-                <div class="contactBox">
-                <v-btn class="contact-item" icon color="green">
-                 <v-icon size="20" color="white">mdi-phone</v-icon>
+            <h2 class="text-white text-center">Datos de Contacto</h2>
+            <div class="contact-details">
+            <div class="contactBox">
+              <v-btn class="contact-item" icon color="green">
+                <v-icon size="20" color="white">mdi-phone</v-icon>
+              </v-btn>
+              <span class="cursor-pointer text-md-h6 text-lg-h6 text-white">Teléfono: 3564328430</span>
+            </div>
+            <div class="contactBox">
+                <v-btn class="contact-item" icon color="blue" @click="openLink('https://www.facebook.com/profile.php?id=100063937125255')">
+                <v-icon size="20" color="white">mdi-facebook</v-icon>
                 </v-btn>
-                <span class="cursor-pointer text-md-h6 text-lg-h6 text-white">Teléfono: 3564328430</span>
-              </div>
-              <div class="contactBox">
-                <v-btn class="contact-item" icon color="blue" @click="openLink('https://www.facebook.com/profile.php?id=100063937125255')">
-                  <v-icon size="20" color="white">mdi-facebook</v-icon>
-                </v-btn>
-                <span @click="openLink('https://www.facebook.com/profile.php?id=100063937125255')" class="cursor-pointer text-md-h6 text-lg-h6 text-white">Seguinos en Facebook</span>
-              </div>
-              <div class="contactBox">
-                <v-btn class="contact-item" icon color="pink" @click="openLink('https://instagram.com/jardineria2.0/')">
-                  <v-icon size="20" color="white">mdi-instagram</v-icon>
-                </v-btn>
-                <a class="cursor-pointer text-md-h6 text-lg-h6" href="https://instagram.com/jardineria2.0/" target="_blank" aria-label="Seguinos en instagram">
-                  Instagram: jardineria2.0
-                </a>
-              </div>
-              <div class="contactBox">
-                <v-btn class="contact-item" icon color="green" @click="openWhatsApp()">
-                  <v-icon size="20" color="white">mdi-whatsapp</v-icon>
-                 </v-btn>
-                <span @click="openWhatsApp()" class="cursor-pointer text-white text-md-h6 text-lg-h6">WhatsApp: 3564328430</span>
-              </div>
-            </div>
-          </v-col>
-        </v-row>
-
+                <span @click="openLink('https://www.facebook.com/profile.php?id=100063937125255')" class="cursor-pointer text-md-h6 text-lg-h6 text-white">Seguinos en Facebook</span>
+            </div>
+            <div class="contactBox">
+              <v-btn class="contact-item" icon color="pink" href="https://instagram.com/jardineria2.0/" target="_blank">
+                <v-icon color="white">mdi-instagram</v-icon>
+              </v-btn>
+              <a class="cursor-pointer text-md-h6 text-lg-h6" href="https://instagram.com/jardineria2.0/" target="_blank" aria-label="Seguinos en instagram">
+                Instagram: jardineria2.0
+              </a>
+            </div>
+            <div class="contactBox">
+              <v-btn class="contact-item" icon color="green" @click="openWhatsApp()">
+                  <v-icon color="white">mdi-whatsapp</v-icon>
+              </v-btn>
+              <span @click="openWhatsApp()" class="cursor-pointer text-white text-md-h6 text-lg-h6">WhatsApp: 3564328430</span>
+            </div>
+          </div>
+        </v-col>
+      </v-row>
         <div class="scroll-to-top" @click="scrollToTop" v-show="showScrollToTop">
           <v-icon color="white">mdi-chevron-up</v-icon>
         </div>
@@ -227,7 +226,7 @@
           </a>
           <a target="_blank" class="instagram-link" href="https://instagram.com/jardineria2.0/">
             <div class="instagram-circle">
-              <v-icon color="white">mdi-instagram</v-icon>
+              <v-icon size="25" color="white">mdi-instagram</v-icon>
             </div>
           </a>
         </div>
@@ -554,6 +553,10 @@ export default {
 @media (max-width: 768px) {
   .links {
     display: none !important;
+  }
+
+  #Contacto {
+    text-align: center;
   }
 
   .titleLogo {
