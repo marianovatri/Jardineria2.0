@@ -1,7 +1,7 @@
 <template>
-  <HelloWorld />
+  <HomeJardineria />
 </template>
 
 <script setup>
-  import HelloWorld from '@/components/HelloWorld.vue'
+  import HomeJardineria from '@/components/HomeJardineria.vue'
 </script>

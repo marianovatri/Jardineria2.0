@@ -6,9 +6,9 @@
     </v-app-bar> -->
 
     <nav id="nav" class="menu">
-      <v-app-bar-nav-icon @click="showDrawer" color="white"></v-app-bar-nav-icon>
+      <v-app-bar-nav-icon @click="showDrawer" title="Menu" color="white"></v-app-bar-nav-icon>
       <div class="navigation-container d-flex ma-2">  
-        <v-img src="../assets/Logo.jpg" alt="Logo Jardineria2.0" loading="lazy" class="header-image" />
+        <v-img src="../assets/Logo.jpg" alt="Logo Jardineria2.0" title="Jardineria2.0" loading="lazy" class="header-image" />
         <div class="text-white text-h5 ml-2 titleLogo"><span style="display: block;">Jardineria2.0</span></div>
       </div>
       <ul class="links d-flex">  
@@ -16,7 +16,10 @@
           <a class="link pa-3 rounded-shaped v-resize-text" style="min-font-size: 12px; max-font-size: 18px;">{{ link.text }}</a> 
         </li>
       </ul>
-      <v-btn class="ma-5 bg-green-lighten-5 text-green-darken-4 presupuesto">
+      <v-btn 
+        class="ma-5 bg-green-lighten-5 text-green-darken-4 presupuesto"
+        href='https://wa.me/3564328430?text=Hola%2C%20estoy%20interesado%20en%20obtener%20un%20presupuesto%20para%20el%20servicio%20de%20jardineria'
+      >
         <v-icon dark>mdi-whatsapp</v-icon>
         Pedir presupuesto
       </v-btn>
@@ -150,13 +153,15 @@
 
         <v-row class="section-container" id="Contacto">
           <v-col cols="12" md="4" lg="4" class="d-flex flex-column">
-            <h2 class="text-white">Sobre Jardinería 2.0</h2>
-            <p class="text-white">Escriba un párrafo corto y descriptivo sobre la historia de Monarch Jardinería. Puede mencionar cuándo se fundó, su enfoque principal, o cualquier otra información que destaque su negocio.</p>
+            <h2 class="text-white">Sobre nosotros</h2>
+            <p class="text-white">Somos una empresa apasionada por la naturaleza y comprometida con el mantenimiento de los espacios verdes. En Jardineria2.0 nos enorgullece brindar una excelente atención en el cuidado de sus jardines. Ofrecemos un servicio personalizado y profesional, utilizando los mejores materiales y técnicas.
+              Actualmente, ofrecemos servicios de jardinería de alta calidad, como el diseño y mantenimiento de jardines, poda de árboles, control de plagas y enfermedades, y mucho más..
+            </p>
           </v-col>
 
           <v-col cols="12" md="4" lg="4">
             <v-card class="contact-details">
-              <v-card-title class="text-h5">Servicios Principales</v-card-title>
+              <v-card-title class="text-h5 text-center">Servicios Principales</v-card-title>
               <v-card-text class="contactBox">
                 <v-list class="pa-0">
                   <v-list-item v-for="servicio in services" :key="servicio.alt" class="pa-0 ma-0 d-flex align-center">
