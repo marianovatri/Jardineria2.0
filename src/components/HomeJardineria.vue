@@ -257,11 +257,13 @@ export default {
     return {
 
       imageUrls: [ 
-        "ARMADOC.jpeg",
-        "CC2.jpeg",
-        "CC3.jpeg",
-        "CC3.jpeg",
-        "CC3.jpeg",
+        "carrouselPhoto1.jpeg",
+        "carrouselPhoto2.jpeg",
+        "carrouselPhoto3.jpeg",
+        "carrouselPhoto4.jpeg",
+        "carrouselPhoto5.jpeg",
+        "carrouselPhoto6.jpeg",
+        "carrouselPhoto7.jpeg",
       ],
       carouselIndex: 0, 
       
