@@ -462,7 +462,7 @@ export default {
 }
 
 #Contacto {
-  background-color: #008036;
+  background: #008036 url('../assets/overlay.png');
 }
 
 #Biografía {
@@ -523,7 +523,7 @@ export default {
 }
 
 .close-item {
-  background-color: #209620;
+  background: #008036 url('../assets/overlay.png');
 }
 
 .cursor-pointer {
@@ -633,7 +633,7 @@ a:hover {
 }
 
 .menu {
-  background-color: #008036;
+  background: #008036 url('../assets/overlay.png');
   display: flex;
   align-items: center;
   padding: 1rem;
