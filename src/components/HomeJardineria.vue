@@ -9,7 +9,7 @@
       <v-app-bar-nav-icon @click="showDrawer" title="Menu" color="white"></v-app-bar-nav-icon>
       <div class="navigation-container d-flex ma-2">  
         <v-img src="../assets/Logo.jpg" alt="Logo Jardineria2.0" title="Jardineria2.0" loading="lazy" class="header-image" />
-        <div class="text-white text-h5 ml-2 titleLogo"><span style="display: block;">Jardineria2.0</span></div>
+        <div class="text-white text-h5 ml-2 titleLogo"><span style="display: block; text-shadow: 2px 2px 0 black;">Jardineria2.0</span></div>
       </div>
       <ul class="links d-flex">  
         <li class="ml-3 cursor-pointer" v-for="link in links" :key="link.id" @click="scrollToSection(link.text)">
@@ -65,14 +65,14 @@
                 alt="Imagen del Carrusel"
                 cover
               >
-                <div class="d-flex flex-column fill-height justify-center align-center">
-                  <div class="text-h3 headline font-weight-bold text-white">
-                    TU JARDÍN, NUESTRO COMPROMISO
-                  </div>
-                  <div class="text-h5 headline text-white">
-                    Jardinería Profesional a tu Alcance
-                  </div>
+              <div class="d-flex flex-column fill-height justify-center align-center">
+                <div class="text-h3 headline font-weight-bold text-white" style="text-shadow: 2px 2px 0 black;">
+                  TU JARDÍN, NUESTRO COMPROMISO
                 </div>
+                <div class="text-h5 headline text-white" style="text-shadow: 2px 2px 0 black;">
+                  Jardinería Profesional a tu Alcance
+                </div>
+              </div>
             
               </v-carousel-item>
             </v-carousel>
@@ -152,7 +152,7 @@
 
 
         <v-row class="section-container" id="Contacto">
-          <v-col cols="12" md="4" lg="4" class="d-flex flex-column">
+          <!-- <v-col cols="12" md="4" lg="4" class="d-flex flex-column">
             <h2 class="text-white">Sobre nosotros</h2>
             <p class="text-white">Somos una empresa apasionada por la naturaleza y comprometida con el mantenimiento de los espacios verdes. En Jardineria2.0 nos enorgullece brindar una excelente atención en el cuidado de sus jardines. Ofrecemos un servicio personalizado y profesional, utilizando los mejores materiales y técnicas.
               Actualmente, ofrecemos servicios de jardinería de alta calidad, como el diseño y mantenimiento de jardines, poda de árboles, control de plagas y enfermedades, y mucho más..
@@ -173,40 +173,49 @@
                 </v-list>
               </v-card-text>
             </v-card>
-          </v-col>
+          </v-col> -->
 
-          <v-col cols="12" md="4" lg="4">
-            <h2 class="text-white text-center">Datos de Contacto</h2>
+          <v-col cols="4" md="4" lg="4">
+            <!-- <h2 class="text-white text-center">Datos de Contacto</h2> -->
             <div class="contact-details">
             <div class="contactBox">
               <v-btn class="contact-item" icon color="green">
-                <v-icon size="20" color="white">mdi-phone</v-icon>
+                <v-icon size="20" color="white" title="cellphone">mdi-phone</v-icon>
               </v-btn>
-              <span class="cursor-pointer text-md-h6 text-lg-h6 text-white">Teléfono: 3564328430</span>
+              <span class="cursor-pointer text-md-h6 text-lg-h6 text-white"></span>
             </div>
             <div class="contactBox">
-                <v-btn class="contact-item" icon color="blue" @click="openLink('https://www.facebook.com/profile.php?id=100063937125255')">
-                <v-icon size="20" color="white">mdi-facebook</v-icon>
-                </v-btn>
-                <span @click="openLink('https://www.facebook.com/profile.php?id=100063937125255')" class="cursor-pointer text-md-h6 text-lg-h6 text-white">Seguinos en Facebook</span>
+              <v-btn class="contact-item" icon color="blue" @click="openLink('https://www.facebook.com/profile.php?id=100063937125255')">
+                <v-icon size="20" color="white" title="facebook">mdi-facebook</v-icon>
+              </v-btn>
+              <span @click="openLink('https://www.facebook.com/profile.php?id=100063937125255')" class="cursor-pointer text-md-h6 text-lg-h6 text-white"></span>
             </div>
             <div class="contactBox">
               <v-btn class="contact-item" icon color="pink" href="https://instagram.com/jardineria2.0/" target="_blank">
-                <v-icon color="white">mdi-instagram</v-icon>
+                <v-icon color="white" title="instagram">mdi-instagram</v-icon>
               </v-btn>
               <a class="cursor-pointer text-md-h6 text-lg-h6" href="https://instagram.com/jardineria2.0/" target="_blank" aria-label="Seguinos en instagram">
-                Instagram: jardineria2.0
+              
               </a>
             </div>
             <div class="contactBox">
               <v-btn class="contact-item" icon color="green" @click="openWhatsApp()">
-                  <v-icon color="white">mdi-whatsapp</v-icon>
+                  <v-icon color="white" title="whatsapp">mdi-whatsapp</v-icon>
               </v-btn>
-              <span @click="openWhatsApp()" class="cursor-pointer text-white text-md-h6 text-lg-h6">WhatsApp: 3564328430</span>
+              <span @click="openWhatsApp()" class="cursor-pointer text-white text-md-h6 text-lg-h6"></span>
             </div>
           </div>
         </v-col>
-      </v-row>
+        <v-col cols="12">
+          <div class="navigation-container d-flex ma-2">  
+            <div class="d-flex align-center">
+
+              <v-img src="../assets/Logo.jpg" alt="Logo Jardineria2.0" title="Jardineria2.0" loading="lazy" class="header-image" />
+              <div class="text-white text-h5 ml-2 titleLogo"><span style="display: block; text-shadow: 2px 2px 0 black;">Jardineria2.0</span></div>
+            </div>
+          </div>
+        </v-col>
+      </v-row >
         <div class="scroll-to-top" @click="scrollToTop" v-show="showScrollToTop">
           <v-icon color="white">mdi-chevron-up</v-icon>
         </div>
@@ -463,6 +472,10 @@ export default {
 
 #Contacto {
   background: #008036 url('../assets/overlay.png');
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 #Biografía {
@@ -809,7 +822,7 @@ ul {
 
 
 .contact-details {
-  /* display: flex; */
+  display: flex;
   /* align-items: flex-start; */
   /* margin-top: 20px; */
   justify-content: space-around;
@@ -833,13 +846,13 @@ ul {
 
 @media (max-width: 768px) {
   .section-container {
-    flex-direction: column;
+    /* flex-direction: column; */
     padding: 10px 5px;
   }
 
-  .contact-details {
+  /* .contact-details {
     flex-direction: column;
-  }
+  } */
 }
 
 </style>
