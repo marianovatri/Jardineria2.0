@@ -71,6 +71,8 @@ links.forEach(a => {
   const s = document.querySelector(a.hash)
   if (s) ioNav.observe(s)
 })
+// El hero y el proceso no tienen link: al pasar por ellos no queda ninguno marcado.
+document.querySelectorAll('.hero, #proceso').forEach(s => ioNav.observe(s))
 
 /* Botones que siguen apenas al mouse. */
 if (puntero && !quieto) {
