@@ -1,22 +1,239 @@
 <!DOCTYPE html>
-<html lang="es">
-
+<html lang="es-AR">
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" href="/favicon.ico" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta property="og:title" content="Jardineria 2.0" />
-  <meta property="og:description" content="Descubre la belleza de la naturaleza con nuestros servicios de jardinería de alta calidad." />
-  <title>Jardineria 2.0</title>
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-  />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Jardinería 2.0 · Corte de césped, poda y mantenimiento de jardines</title>
+  <meta name="description" content="Corte de césped, colocación de champas, nivelado de terreno, poda de árboles y palmeras, limpieza de lotes y jardines secos. Pedí tu presupuesto por WhatsApp." />
+  <link rel="canonical" href="https://jardineriasf.netlify.app/" />
+  <meta name="theme-color" content="#173a26" />
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="es_AR" />
+  <meta property="og:site_name" content="Jardinería 2.0" />
+  <meta property="og:title" content="Jardinería 2.0 · Tu jardín, nuestro compromiso" />
+  <meta property="og:description" content="Corte de césped, champas, nivelado, poda, limpieza y jardines secos. Pedí tu presupuesto por WhatsApp." />
+  <meta property="og:url" content="https://jardineriasf.netlify.app/" />
+  <meta property="og:image" content="https://jardineriasf.netlify.app/og.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Jardín con césped recién cortado y un camino de baldosas" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preload" as="image" href="/fotos/hero-800.webp" imagesrcset="/fotos/hero-800.webp 800w, /fotos/hero-1600.webp 1600w" imagesizes="(min-width: 960px) 50vw, 100vw" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Inter:wght@400;500;600&display=swap" />
+  <link rel="stylesheet" href="/src/style.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LandscapingBusiness",
+    "name": "Jardinería 2.0",
+    "url": "https://jardineriasf.netlify.app/",
+    "image": "https://jardineriasf.netlify.app/og.jpg",
+    "logo": "https://jardineriasf.netlify.app/apple-touch-icon.png",
+    "telephone": "+54 9 3564 32-8430",
+    "sameAs": [
+      "https://instagram.com/jardineria2.0/",
+      "https://www.facebook.com/profile.php?id=100063937125255"
+    ]
+  }
+  </script>
 </head>
 
 <body>
-  <div id="app"></div>
-  <script type="module" src="/src/main.js"></script>
-</body>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.08-.3-.15-1.26-.47-2.39-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.2-.24-.59-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.21 3.07.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.7.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2-1.42.25-.7.25-1.29.18-1.41-.08-.13-.27-.2-.57-.35M12.05 21.79h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.89-9.88 2.64 0 5.12 1.03 6.99 2.9a9.83 9.83 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.88 9.88m8.41-18.3A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.69 1.45h.01c6.55 0 11.89-5.34 11.89-11.9 0-3.17-1.24-6.16-3.48-8.4z"/></symbol>
+    <symbol id="i-ig" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/></g><circle cx="17.5" cy="6.5" r="1.3" fill="currentColor"/></symbol>
+    <symbol id="i-fb" viewBox="0 0 24 24"><path fill="currentColor" d="M13.5 22v-8h2.7l.4-3.2h-3.1V8.8c0-.9.3-1.6 1.6-1.6h1.7V4.3c-.3 0-1.3-.1-2.5-.1-2.5 0-4.1 1.5-4.1 4.2v2.4H7.4V14h2.8v8z"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  </svg>
 
+  <a class="skip" href="#servicios">Saltar al contenido</a>
+
+  <header class="top">
+    <div class="wrap top__inner">
+      <a class="brand" href="#inicio" aria-label="Jardinería 2.0, inicio">
+        <img src="/fotos/logo.webp" alt="" width="40" height="40" />
+        <span>Jardinería 2.0</span>
+      </a>
+      <nav class="nav" aria-label="Secciones">
+        <a href="#servicios">Servicios</a>
+        <a href="#trabajos">Trabajos</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+      <a class="btn btn--wa btn--sm" aria-label="Pedir presupuesto por WhatsApp" href="https://wa.me/5493564328430?text=Hola%2C%20quiero%20pedir%20un%20presupuesto%20de%20jardiner%C3%ADa" target="_blank" rel="noopener">
+        <svg class="ico" aria-hidden="true"><use href="#i-wa" /></svg>
+        <span>Pedir presupuesto</span>
+      </a>
+    </div>
+  </header>
+
+  <main id="inicio">
+    <section class="hero">
+      <div class="wrap hero__grid">
+        <div class="hero__text">
+          <p class="eyebrow">Jardinería profesional a tu alcance</p>
+          <h1>Tu jardín, nuestro compromiso.</h1>
+          <p class="lead">Corte de césped, colocación de champas, nivelado, poda, limpieza de lotes y jardines secos. Contanos qué necesitás y te pasamos el presupuesto por WhatsApp.</p>
+          <div class="hero__cta">
+            <a class="btn btn--wa" href="https://wa.me/5493564328430?text=Hola%2C%20quiero%20pedir%20un%20presupuesto%20de%20jardiner%C3%ADa" target="_blank" rel="noopener">
+              <svg class="ico" aria-hidden="true"><use href="#i-wa" /></svg>
+              Pedir presupuesto
+            </a>
+            <a class="btn btn--ghost" href="#servicios">Ver servicios</a>
+          </div>
+        </div>
+        <figure class="hero__photo">
+          <img
+            src="/fotos/hero-800.webp"
+            srcset="/fotos/hero-800.webp 800w, /fotos/hero-1600.webp 1600w"
+            sizes="(min-width: 960px) 50vw, 100vw"
+            width="1600" height="1200"
+            alt="Jardín con césped recién cortado, un camino de baldosas y un arbolito en maceta"
+            fetchpriority="high" />
+        </figure>
+      </div>
+    </section>
+
+    <section class="section" id="servicios" aria-labelledby="servicios-titulo">
+      <div class="wrap">
+        <header class="section__head">
+          <p class="eyebrow">Servicios</p>
+          <h2 id="servicios-titulo">Qué hacemos</h2>
+        </header>
+
+        <ul class="services">
+          <li class="service">
+            <img src="/fotos/servicio-corte.webp" width="720" height="540" loading="lazy" alt="Césped parejo recién cortado junto a una vereda" />
+            <div class="service__body">
+              <h3>Corte de césped</h3>
+              <p>Uno de nuestros servicios principales. Usamos equipos pensados para un corte uniforme que deja tu jardín en óptimas condiciones.</p>
+              <a class="service__link" href="https://wa.me/5493564328430?text=Hola%2C%20quiero%20pedir%20un%20presupuesto%20de%20corte%20de%20c%C3%A9sped" target="_blank" rel="noopener">Consultar <svg class="ico" aria-hidden="true"><use href="#i-arrow" /></svg></a>
+            </div>
+          </li>
+          <li class="service">
+            <img src="/fotos/servicio-colocacion.webp" width="720" height="540" loading="lazy" alt="Champas de césped colocadas en damero sobre tierra" />
+            <div class="service__body">
+              <h3>Colocación de césped</h3>
+              <p>Colocamos champas de calidad para que tu jardín quede verde e impecable todo el año.</p>
+              <a class="service__link" href="https://wa.me/5493564328430?text=Hola%2C%20quiero%20pedir%20un%20presupuesto%20de%20colocaci%C3%B3n%20de%20c%C3%A9sped" target="_blank" rel="noopener">Consultar <svg class="ico" aria-hidden="true"><use href="#i-arrow" /></svg></a>
+            </div>
+          </li>
+          <li class="service">
+            <img src="/fotos/servicio-nivelado.webp" width="720" height="540" loading="lazy" alt="Terreno nivelado y listo para sembrar" />
+            <div class="service__body">
+              <h3>Nivelado de terreno</h3>
+              <p>Nivelamos el terreno de forma precisa para que después el césped quede parejo y se corte sin problemas.</p>
+              <a class="service__link" href="https://wa.me/5493564328430?text=Hola%2C%20quiero%20pedir%20un%20presupuesto%20de%20nivelado%20de%20terreno" target="_blank" rel="noopener">Consultar <svg class="ico" aria-hidden="true"><use href="#i-arrow" /></svg></a>
+            </div>
+          </li>
+          <li class="service">
+            <img src="/fotos/servicio-poda.webp" width="720" height="540" loading="lazy" alt="Palmera podada contra el cielo" />
+            <div class="service__body">
+              <h3>Poda de árboles y palmeras</h3>
+              <p>Una buena poda cuida la salud y la forma de tus plantas. Nos encargamos de manera profesional para que crezcan sanas.</p>
+              <a class="service__link" href="https://wa.me/5493564328430?text=Hola%2C%20quiero%20pedir%20un%20presupuesto%20de%20poda%20de%20%C3%A1rboles%20y%20palmeras" target="_blank" rel="noopener">Consultar <svg class="ico" aria-hidden="true"><use href="#i-arrow" /></svg></a>
+            </div>
+          </li>
+          <li class="service">
+            <img src="/fotos/servicio-limpieza.webp" width="720" height="540" loading="lazy" alt="Jardín limpio con césped y pileta al fondo" />
+            <div class="service__body">
+              <h3>Limpieza de jardines y lotes</h3>
+              <p>Sacamos hojas, ramas y desechos. Dejá que nos ocupemos de tener tu espacio exterior limpio y ordenado.</p>
+              <a class="service__link" href="https://wa.me/5493564328430?text=Hola%2C%20quiero%20pedir%20un%20presupuesto%20de%20limpieza%20de%20jard%C3%ADn%20o%20lote" target="_blank" rel="noopener">Consultar <svg class="ico" aria-hidden="true"><use href="#i-arrow" /></svg></a>
+            </div>
+          </li>
+          <li class="service">
+            <img src="/fotos/servicio-jardin-seco.webp" width="720" height="540" loading="lazy" alt="Jardín seco con piedra blanca junto a una casa" />
+            <div class="service__body">
+              <h3>Jardín seco</h3>
+              <p>Armamos y mantenemos jardines secos: necesitan poco riego, ahorran agua y lucen bien todo el año.</p>
+              <a class="service__link" href="https://wa.me/5493564328430?text=Hola%2C%20quiero%20pedir%20un%20presupuesto%20de%20jard%C3%ADn%20seco" target="_blank" rel="noopener">Consultar <svg class="ico" aria-hidden="true"><use href="#i-arrow" /></svg></a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section section--tint" id="trabajos" aria-labelledby="trabajos-titulo">
+      <div class="wrap">
+        <header class="section__head">
+          <p class="eyebrow">Trabajos</p>
+          <h2 id="trabajos-titulo">Algunos jardines que cuidamos</h2>
+        </header>
+        <div class="gallery">
+          <img class="gallery__wide" src="/fotos/trabajo-3-600.webp" srcset="/fotos/trabajo-3-600.webp 600w, /fotos/trabajo-3-1200.webp 1200w" sizes="(min-width: 960px) 50vw, 100vw" width="1200" height="900" loading="lazy" alt="Césped con camino de losetas hacia una pileta" />
+          <img class="gallery__tall" src="/fotos/trabajo-4-600.webp" srcset="/fotos/trabajo-4-600.webp 600w, /fotos/trabajo-4-1200.webp 1200w" sizes="(min-width: 960px) 25vw, 50vw" width="900" height="1200" loading="lazy" alt="Arbustos podados en forma redonda sobre un césped verde" />
+          <img src="/fotos/trabajo-5-600.webp" srcset="/fotos/trabajo-5-600.webp 600w, /fotos/trabajo-5-1200.webp 1200w" sizes="(min-width: 960px) 25vw, 50vw" width="1200" height="900" loading="lazy" alt="Cantero con árboles jóvenes y una palmera" />
+          <img src="/fotos/trabajo-6-600.webp" srcset="/fotos/trabajo-6-600.webp 600w, /fotos/trabajo-6-1200.webp 1200w" sizes="(min-width: 960px) 25vw, 50vw" width="1200" height="900" loading="lazy" alt="Frente de casa con césped nuevo y un árbol recién plantado" />
+          <img src="/fotos/trabajo-7-600.webp" srcset="/fotos/trabajo-7-600.webp 600w, /fotos/trabajo-7-1200.webp 1200w" sizes="(min-width: 960px) 25vw, 50vw" width="1200" height="900" loading="lazy" alt="Muro cubierto de enredadera prolija" />
+          <img src="/fotos/trabajo-8-600.webp" srcset="/fotos/trabajo-8-600.webp 600w, /fotos/trabajo-8-1200.webp 1200w" sizes="(min-width: 960px) 25vw, 50vw" width="1200" height="900" loading="lazy" alt="Patio con césped parejo y sillones blancos" />
+        </div>
+        <p class="gallery__more">
+          Más trabajos en
+          <a href="https://instagram.com/jardineria2.0/" target="_blank" rel="noopener">@jardineria2.0</a>
+        </p>
+      </div>
+    </section>
+
+    <section class="section" id="nosotros" aria-labelledby="nosotros-titulo">
+      <div class="wrap about">
+        <figure class="about__photo">
+          <img src="/fotos/trabajo-1-600.webp" srcset="/fotos/trabajo-1-600.webp 600w, /fotos/trabajo-1-1200.webp 1200w" sizes="(min-width: 960px) 45vw, 100vw" width="1200" height="900" loading="lazy" alt="Jardinero bordeando el césped junto a un cerco" />
+        </figure>
+        <div class="about__text">
+          <p class="eyebrow">Nosotros</p>
+          <h2 id="nosotros-titulo">¿Quiénes somos?</h2>
+          <p>Somos un equipo apasionado por la naturaleza y comprometido con el mantenimiento de los espacios verdes. En Jardinería 2.0 nos enorgullece dar una excelente atención en el cuidado de tu jardín.</p>
+          <p>Trabajamos de forma personalizada y profesional, con buenos materiales y técnicas: diseño y mantenimiento de jardines, poda de árboles, control de plagas y enfermedades, y mucho más.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contacto" aria-labelledby="contacto-titulo">
+      <div class="wrap contact__inner">
+        <div>
+          <h2 id="contacto-titulo">¿Querés un presupuesto?</h2>
+          <p>Escribinos por WhatsApp con lo que necesitás y, si podés, mandanos una foto del espacio.</p>
+        </div>
+        <div class="contact__actions">
+          <a class="btn btn--light" href="https://wa.me/5493564328430?text=Hola%2C%20quiero%20pedir%20un%20presupuesto%20de%20jardiner%C3%ADa" target="_blank" rel="noopener">
+            <svg class="ico" aria-hidden="true"><use href="#i-wa" /></svg>
+            Escribir por WhatsApp
+          </a>
+          <div class="social">
+            <a href="https://instagram.com/jardineria2.0/" target="_blank" rel="noopener" aria-label="Instagram de Jardinería 2.0">
+              <svg class="ico" aria-hidden="true"><use href="#i-ig" /></svg> Instagram
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=100063937125255" target="_blank" rel="noopener" aria-label="Facebook de Jardinería 2.0">
+              <svg class="ico" aria-hidden="true"><use href="#i-fb" /></svg> Facebook
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap foot__inner">
+      <span class="brand brand--small">
+        <img src="/fotos/logo.webp" alt="" width="28" height="28" loading="lazy" />
+        Jardinería 2.0
+      </span>
+      <span>© <span id="anio">2026</span> Jardinería 2.0</span>
+    </div>
+  </footer>
+
+  <a class="fab" href="https://wa.me/5493564328430?text=Hola%2C%20quiero%20pedir%20un%20presupuesto%20de%20jardiner%C3%ADa" target="_blank" rel="noopener" aria-label="Pedir presupuesto por WhatsApp">
+    <svg class="ico" aria-hidden="true"><use href="#i-wa" /></svg>
+  </a>
+
+  <script>document.getElementById('anio').textContent = new Date().getFullYear()</script>
+</body>
 </html>

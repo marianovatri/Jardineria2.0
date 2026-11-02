@@ -1,0 +1,235 @@
+:root {
+  --verde-900: #10291b;
+  --verde-800: #173a26;
+  --verde-700: #1f5233;
+  --verde-600: #2a6b42;
+  --wa: #1c7c43;
+  --wa-hover: #156335;
+  --brote: #b9d98c;
+  --crema: #f6f3ec;
+  --crema-2: #ece7db;
+  --tinta: #17221b;
+  --tinta-suave: #3f4b43;
+  --blanco: #ffffff;
+  --radio: 18px;
+  --sombra: 0 1px 2px rgb(16 41 27 / 0.06), 0 8px 24px rgb(16 41 27 / 0.08);
+  --display: 'Bricolage Grotesque', 'Inter', system-ui, sans-serif;
+  --texto: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+}
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { transition: none !important; }
+}
+
+body {
+  margin: 0;
+  background: var(--crema);
+  color: var(--tinta);
+  font-family: var(--texto);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { display: block; max-width: 100%; height: auto; }
+figure { margin: 0; }
+a { color: inherit; }
+
+h1, h2, h3 {
+  font-family: var(--display);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin: 0;
+  color: var(--verde-900);
+}
+
+.wrap { width: min(1160px, 100% - 2.5rem); margin-inline: auto; }
+
+.ico { width: 1.25em; height: 1.25em; flex: none; }
+
+.skip {
+  position: absolute; left: 1rem; top: -4rem;
+  background: var(--verde-900); color: var(--blanco);
+  padding: .6rem 1rem; border-radius: 8px; z-index: 100;
+}
+.skip:focus { top: 1rem; }
+
+:focus-visible { outline: 3px solid var(--wa); outline-offset: 3px; border-radius: 6px; }
+
+/* Botones */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: .55rem;
+  min-height: 52px; padding: .8rem 1.4rem;
+  border-radius: 999px; border: 2px solid transparent;
+  font: 600 1rem/1 var(--texto); text-decoration: none;
+  transition: background-color .2s, transform .2s, border-color .2s;
+}
+.btn:hover { transform: translateY(-1px); }
+.btn--wa { background: var(--wa); color: var(--blanco); }
+.btn--wa:hover { background: var(--wa-hover); }
+.btn--ghost { color: var(--verde-800); border-color: rgb(23 58 38 / 0.25); }
+.btn--ghost:hover { border-color: var(--verde-800); }
+.btn--light { background: var(--blanco); color: var(--verde-900); }
+.btn--light:hover { background: var(--crema); }
+.btn--sm { min-height: 44px; padding: .55rem 1.1rem; font-size: .95rem; }
+
+/* Header */
+.top {
+  position: sticky; top: 0; z-index: 50;
+  background: rgb(246 243 236 / 0.9);
+  backdrop-filter: saturate(1.4) blur(10px);
+  border-bottom: 1px solid rgb(23 58 38 / 0.08);
+}
+.top__inner { display: flex; align-items: center; gap: 1.5rem; height: 68px; }
+.brand {
+  display: inline-flex; align-items: center; gap: .6rem;
+  font: 700 1.15rem/1 var(--display); color: var(--verde-900); text-decoration: none;
+}
+.brand img { border-radius: 50%; }
+.nav { display: flex; gap: .25rem; margin-left: auto; }
+.nav a {
+  padding: .5rem .8rem; border-radius: 999px;
+  color: var(--tinta-suave); font-weight: 500; text-decoration: none;
+}
+.nav a:hover { color: var(--verde-900); background: var(--crema-2); }
+
+/* Hero */
+.hero { padding: clamp(2rem, 5vw, 4.5rem) 0 clamp(3rem, 6vw, 5.5rem); }
+.hero__grid { display: grid; gap: clamp(2rem, 4vw, 4rem); align-items: center; }
+.eyebrow {
+  margin: 0 0 .9rem;
+  font-size: .8rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--verde-600);
+}
+.hero h1 { font-size: clamp(2.6rem, 6.2vw, 4.6rem); max-width: 12ch; }
+.lead { margin: 1.4rem 0 2rem; font-size: clamp(1.1rem, 1.6vw, 1.25rem); color: var(--tinta-suave); max-width: 46ch; }
+.hero__cta { display: flex; flex-wrap: wrap; gap: .75rem; }
+.hero__photo img {
+  width: 100%; aspect-ratio: 4 / 3; object-fit: cover;
+  border-radius: calc(var(--radio) + 6px);
+  box-shadow: var(--sombra);
+}
+
+/* Secciones */
+.section { padding: clamp(3.5rem, 8vw, 6.5rem) 0; }
+.section--tint { background: var(--crema-2); }
+.section__head { margin-bottom: clamp(2rem, 4vw, 3rem); }
+.section h2 { font-size: clamp(2rem, 4vw, 3rem); }
+
+/* Servicios */
+.services {
+  list-style: none; margin: 0; padding: 0;
+  display: grid; gap: 1.25rem;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr));
+}
+.service {
+  display: flex; flex-direction: column;
+  background: var(--blanco); border-radius: var(--radio);
+  overflow: hidden; box-shadow: var(--sombra);
+}
+.service img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+.service__body { display: flex; flex-direction: column; flex: 1; padding: 1.4rem 1.5rem 1.5rem; }
+.service h3 { font-size: 1.4rem; }
+.service p { margin: .6rem 0 1.2rem; color: var(--tinta-suave); font-size: 1rem; }
+.service__link {
+  margin-top: auto; align-self: flex-start;
+  display: inline-flex; align-items: center; gap: .4rem;
+  min-height: 44px;
+  font-weight: 600; color: var(--wa); text-decoration: none;
+}
+.service__link .ico { transition: transform .2s; }
+.service__link:hover .ico { transform: translateX(3px); }
+
+/* Trabajos */
+.gallery { display: grid; gap: .75rem; grid-template-columns: repeat(2, 1fr); }
+.gallery img { width: 100%; height: 100%; object-fit: cover; border-radius: 14px; aspect-ratio: 4 / 3; }
+.gallery__wide { grid-column: span 2; }
+.gallery__more { margin: 1.5rem 0 0; color: var(--tinta-suave); }
+.gallery__more a { color: var(--verde-700); font-weight: 600; }
+
+/* Nosotros */
+.about { display: grid; gap: clamp(2rem, 5vw, 4rem); align-items: center; }
+.about__photo img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: var(--radio); }
+.about__text p:not(.eyebrow) { color: var(--tinta-suave); max-width: 56ch; }
+.about__text h2 { margin-bottom: 1rem; }
+
+/* Contacto */
+.contact {
+  background: var(--verde-800); color: #e6efe4;
+  padding: clamp(3.5rem, 7vw, 5.5rem) 0;
+}
+.contact h2 { color: var(--blanco); font-size: clamp(2rem, 4vw, 3rem); }
+.contact p { margin: .8rem 0 0; max-width: 48ch; font-size: 1.1rem; }
+.contact__inner { display: grid; gap: 2rem; align-items: center; }
+.contact__actions { display: flex; flex-direction: column; align-items: flex-start; gap: 1.25rem; }
+.social { display: flex; gap: 1.5rem; }
+.social a {
+  display: inline-flex; align-items: center; gap: .45rem; min-height: 44px;
+  color: var(--brote); font-weight: 600; text-decoration: none;
+}
+.social a:hover { color: var(--blanco); }
+
+/* Footer */
+.foot { background: var(--verde-900); color: #b8c7bb; font-size: .9rem; }
+.foot__inner { display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: 1.4rem 0 5.5rem; }
+.brand--small { font-size: 1rem; color: #e6efe4; }
+
+/* Botón flotante (celular) */
+.fab {
+  position: fixed; right: 1rem; bottom: 1rem; z-index: 60;
+  display: grid; place-items: center; width: 58px; height: 58px; border-radius: 50%;
+  background: var(--wa); color: var(--blanco);
+  box-shadow: 0 6px 20px rgb(16 41 27 / 0.3);
+}
+.fab .ico { width: 30px; height: 30px; }
+
+@media (min-width: 720px) {
+  .gallery { grid-template-columns: repeat(4, 1fr); grid-auto-rows: clamp(150px, 19vw, 230px); }
+  .gallery img { aspect-ratio: auto; }
+  .gallery__tall { grid-row: span 2; }
+  .foot__inner { padding-bottom: 1.4rem; }
+}
+
+@media (min-width: 960px) {
+  .hero__grid { grid-template-columns: 1fr 1.05fr; }
+  .about { grid-template-columns: 1fr 1fr; }
+  .contact__inner { grid-template-columns: 1.3fr 1fr; }
+  .contact__actions { align-items: flex-end; }
+  .fab { display: none; }
+}
+
+@media (max-width: 859px) {
+  .nav { display: none; }
+  .top .btn--sm { margin-left: auto; }
+}
+
+@media (max-width: 719px) {
+  .gallery img:last-child { grid-column: span 2; }
+}
+
+/* En celular, servicios en filas compactas: foto al costado, más fácil de recorrer. */
+@media (max-width: 599px) {
+  .service { flex-direction: row; }
+  .service img { width: 36%; aspect-ratio: auto; min-height: 100%; }
+  .service__body { padding: 1rem 1.1rem; }
+  .service h3 { font-size: 1.15rem; }
+  .service p { font-size: .95rem; margin: .4rem 0 .5rem; }
+}
+
+@media (max-width: 420px) {
+  .top .btn--sm span { display: none; }
+  .top .btn--sm { width: 44px; padding: 0; }
+  .hero__cta .btn { flex: 1 1 100%; }
+}
+
+/* Mientras se ve el botón flotante, el del header sobra. */
+@media (max-width: 959px) {
+  .top .btn--sm { display: none; }
+}
